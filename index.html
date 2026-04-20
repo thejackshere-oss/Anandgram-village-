@@ -5,96 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anandgram Village | Stay Close to Nature</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        body { font-family: 'Inter', sans-serif; background-color: #0b0b0b; color: #ffffff; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .gold-text { color: #D4AF37; }
-        .gold-bg { background-color: #D4AF37; }
-        .border-gold { border-color: #D4AF37; }
-        .hero-overlay { background: rgba(0, 0, 0, 0.5); }
+        
+        .text-gold { color: #FFD700; } 
+        .bg-gold { background-color: #FFD700; }
+        .border-gold { border-color: #FFD700; }
+        .gold-gradient { background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%); }
+        
+        .review-card { background: #1a1a1a; border-left: 4px solid #FFD700; transition: transform 0.3s ease; }
+        .review-card:hover { transform: translateY(-5px); }
+
+        .video-container { position: relative; overflow: hidden; border: 1px solid rgba(255, 215, 0, 0.1); }
+        .video-container video { width: 100%; height: 350px; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+        .video-container:hover video { opacity: 1; }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 100; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-black/80 border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-widest gold-text uppercase">Anandgram Village</div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
-            <a href="#about" class="hover:text-[#D4AF37] transition">About</a>
-            <a href="#rooms" class="hover:text-[#D4AF37] transition">Rooms</a>
-            <a href="#gallery" class="hover:text-[#D4AF37] transition">Gallery</a>
-            <a href="#contact" class="hover:text-[#D4AF37] transition">Contact</a>
+    <a href="https://api.whatsapp.com/message/7L3ADUFP2XF5P1?autoload=1&app_absent=0&utm_source=ig" target="_blank" class="whatsapp-float">
+        <div class="bg-green-600 p-4 rounded-full shadow-lg border-2 border-white/20">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.89-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.89-11.891 11.89-2.015 0-3.991-.51-5.741-1.468l-6.252 1.687zm6.101-3.515l.439.261c1.408.84 3.12 1.282 4.882 1.282 5.176 0 9.389-4.213 9.389-9.389 0-2.507-.977-4.863-2.751-6.638-1.775-1.775-4.131-2.75-6.638-2.75-5.177 0-9.389 4.213-9.389 9.389 0 1.862.548 3.68 1.586 5.253l.301.458-1.07 3.91 4.013-1.083z"/></svg>
         </div>
-        <a href="#booking" class="gold-bg text-black px-6 py-2 font-bold hover:bg-yellow-600 transition">Book Now</a>
+    </a>
+
+    <nav class="fixed w-full z-50 bg-black/90 border-b border-white/5 px-6 py-4 flex justify-between items-center backdrop-blur-md">
+        <div class="flex items-center space-x-3">
+            <img src="logo anandgram village.png" alt="Logo" class="h-10 w-auto">
+            <span class="text-xl font-black tracking-tighter text-gold uppercase hidden md:block">Anandgram Village</span>
+        </div>
+        <div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-semibold items-center">
+            <a href="#rooms" class="hover:text-gold transition">Stay</a>
+            <a href="#gallery" class="hover:text-gold transition">Gallery</a>
+            <a href="#videos" class="hover:text-gold transition">Cinema</a>
+            <a href="#reviews" class="hover:text-gold transition">Reviews</a>
+            <a href="tel:08894775136" class="text-gold font-bold">☏ 08894775136</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://www.instagram.com/anandgram_village_/" target="_blank" class="hover:text-gold transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.247 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.061 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.247-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.061-2.633-.333-3.608-1.308-.975-.975-1.247-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.247 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#booking" class="gold-gradient text-black px-6 py-2 font-black text-[10px] uppercase tracking-widest rounded-sm">Book Now</a>
+        </div>
     </nav>
 
-    <section class="h-screen relative flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('your-hero-image.jpg');">
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative z-10 px-4">
-            <h1 class="text-5xl md:text-7xl mb-4">A Quiet Aesthetic Bubble</h1>
-            <p class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto italic text-gray-300">
-                "Where nothing urgent exists. Unwind, rejuvenate, and slow down in the heart of Himachal."
+    <section class="h-[85vh] relative flex items-center justify-center text-center px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="image_06df26.png" class="w-full h-full object-cover opacity-40 brightness-50">
+        </div>
+        <div class="relative z-10">
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-none">Pah <span class="text-gold italic">Valley.</span></h1>
+            <p class="text-lg md:text-xl font-light tracking-widest max-w-2xl mx-auto text-gray-300">
+                Lush green, snow-capped mountains and a river to slow you down.
             </p>
         </div>
     </section>
 
-    <section id="about" class="py-20 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl gold-text mb-6 uppercase tracking-widest">Our Philosophy</h2>
-        <p class="text-gray-400 leading-relaxed text-lg mb-8">
-            Located at the midpoint of Manali and Kasol, Anandgram Village offers a 'designed peace'. 
-            Escape the city hustle for a retreat close to the river with mountain views that invite you to breathe.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm tracking-widest text-gray-400">
-            <div>NEAR BHUNTER AIRPORT</div>
-            <div>LOCAL FARM-TO-TABLE</div>
-            <div>4.8 ★ (199+ REVIEWS)</div>
-        </div>
-    </section>
-
-    <section id="rooms" class="py-20 bg-zinc-900 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="border border-gold p-2">
-                <img src="image_06db49.jpg" alt="Holt Loft Interior" class="w-full grayscale hover:grayscale-0 transition duration-500">
+    <section id="rooms" class="py-24 px-6 bg-black">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative group">
+                <img src="image_06db49.png" alt="Holt Loft" class="relative z-10 w-full rounded-sm">
+                <div class="absolute -bottom-4 -right-4 bg-gold text-black p-4 font-black z-20">₹3,483/Night</div>
             </div>
             <div>
-                <h2 class="text-4xl mb-4">The Holt-Loft</h2>
-                <p class="text-gray-400 mb-6">Experience the warmth of wooden cottages and stone architecture. Perfect for 2 adults looking for solitude and mountain aesthetics.</p>
-                <ul class="text-sm space-y-2 mb-8 text-gray-300">
-                    <li>✓ Breakfast Included</li>
-                    <li>✓ Riverside Access</li>
-                    <li>✓ Panoramic Mountain Windows</li>
-                </ul>
-                <div class="text-3xl mb-6">₹3,483 <span class="text-sm text-gray-500">+ taxes</span></div>
-                <div id="booking" class="bg-black border border-gold p-6">
-                    <h3 class="text-gold text-lg mb-4 uppercase">Select Dates</h3>
-                    <div class="flex flex-col space-y-4">
-                        <input type="date" class="bg-zinc-800 border-none p-3 text-white focus:ring-1 ring-gold">
-                        <button class="gold-bg text-black font-bold py-3 uppercase tracking-widest hover:scale-105 transition">Check Availability</button>
-                    </div>
+                <h2 class="text-5xl font-bold mb-6">The <span class="text-gold">Holt-Loft</span></h2>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">Wooden cottages with panoramic mountain windows. Mid-point of Manali and Kasol.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <a href="https://www.makemytrip.com/hotels/anandgram_village-details-kullu.html" target="_blank" class="text-center border border-gold text-gold py-4 font-bold text-xs uppercase tracking-widest hover:bg-gold hover:text-black transition">MakeMyTrip</a>
+                    <a href="https://www.goibibo.com/hotels/anandgram-village-hotel-in-kullu-himachal-pradesh-2998456484690858503/" target="_blank" class="text-center border border-white/20 text-white py-4 font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition">Goibibo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="py-20 px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl uppercase tracking-widest">The Environment</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06dba5.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
-            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06dbdb.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
-            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06df26.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
-            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06e24e.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
+    <section id="videos" class="py-24 bg-zinc-950 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-2 uppercase tracking-tighter italic">Cinematic <span class="text-gold">Moments</span></h2>
+                <p class="text-gray-500 tracking-widest text-xs uppercase">Tap to experience the silence</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="video-container">
+                    <video loop muted autoplay playsinline>
+                        <source src="video1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video loop muted autoplay playsinline>
+                        <source src="video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container md:col-span-1">
+                    <video loop muted autoplay playsinline>
+                        <source src="video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container md:col-span-2">
+                    <video loop muted autoplay playsinline>
+                        <source src="video4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video loop muted autoplay playsinline>
+                        <source src="video5.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-20 border-t border-white/10 bg-black text-center">
-        <img src="logo anandgram village.avif" alt="Logo" class="w-24 mx-auto mb-8">
-        <p class="gold-text uppercase tracking-widest mb-4">Stay Close To Nature</p>
-        <p class="text-gray-500 text-sm mb-8">V4V2+XW7, Pah Valley, Bhullang, Himachal Pradesh 175126</p>
-        <div class="flex justify-center space-x-6">
-            <a href="https://www.makemytrip.com/" class="text-xs border border-gray-700 px-4 py-2 hover:border-gold">MakeMyTrip</a>
-            <a href="https://www.goibibo.com/" class="text-xs border border-gray-700 px-4 py-2 hover:border-gold">Goibibo</a>
+    <section id="reviews" class="py-24 bg-black px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-center text-4xl font-bold mb-16">4.8★ <span class="text-gold italic">Guest Stories</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="review-card p-8"><p class="italic text-gray-300">"Beautifully located, surrounded by serene hills. Refreshing experience!"</p><p class="mt-4 font-bold text-xs uppercase text-gold">— Divyansh Parekh</p></div>
+                <div class="review-card p-8"><p class="italic text-gray-300">"Nice well maintained property... a rivulet flowing alongside. Good & tasty snacks."</p><p class="mt-4 font-bold text-xs uppercase text-gold">— K N Bhardwaj</p></div>
+                <div class="review-card p-8"><p class="italic text-gray-300">"Staff is very good... willing to help with a smile. Memorable stay."</p><p class="mt-4 font-bold text-xs uppercase text-gold">— Jyoti Sharma</p></div>
+                <div class="review-card p-8"><p class="italic text-gray-300">"A lovely property amidst the lap of nature. Food is served with love."</p><p class="mt-4 font-bold text-xs uppercase text-gold">— Aman Puri</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="booking" class="py-24 bg-zinc-950 text-center border-t border-gold/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <img src="logo anandgram village.png" class="w-24 mx-auto mb-10">
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 mb-12">
+                <a href="tel:08894775136" class="text-xl font-bold hover:text-gold transition tracking-tighter">☏ 08894775136</a>
+                <a href="https://www.instagram.com/anandgram_village_/" target="_blank" class="text-xl font-bold hover:text-gold transition tracking-tighter italic">Instagram @anandgram</a>
+            </div>
+            <a href="https://api.whatsapp.com/message/7L3ADUFP2XF5P1?autoload=1&app_absent=0&utm_source=ig" target="_blank" class="gold-gradient text-black px-12 py-5 font-black uppercase tracking-widest text-sm inline-block">Direct WhatsApp Inquiry</a>
+            <p class="mt-12 text-gray-600 text-xs tracking-widest uppercase">Pah Valley, Bhullang, Himachal Pradesh 175126</p>
         </div>
     </footer>
 
