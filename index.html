@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anandgram Village | Stay Close to Nature</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gold-text { color: #D4AF37; }
+        .gold-bg { background-color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .hero-overlay { background: rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 bg-black/80 border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-widest gold-text uppercase">Anandgram Village</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+            <a href="#about" class="hover:text-[#D4AF37] transition">About</a>
+            <a href="#rooms" class="hover:text-[#D4AF37] transition">Rooms</a>
+            <a href="#gallery" class="hover:text-[#D4AF37] transition">Gallery</a>
+            <a href="#contact" class="hover:text-[#D4AF37] transition">Contact</a>
+        </div>
+        <a href="#booking" class="gold-bg text-black px-6 py-2 font-bold hover:bg-yellow-600 transition">Book Now</a>
+    </nav>
+
+    <section class="h-screen relative flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('your-hero-image.jpg');">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-5xl md:text-7xl mb-4">A Quiet Aesthetic Bubble</h1>
+            <p class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto italic text-gray-300">
+                "Where nothing urgent exists. Unwind, rejuvenate, and slow down in the heart of Himachal."
+            </p>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl gold-text mb-6 uppercase tracking-widest">Our Philosophy</h2>
+        <p class="text-gray-400 leading-relaxed text-lg mb-8">
+            Located at the midpoint of Manali and Kasol, Anandgram Village offers a 'designed peace'. 
+            Escape the city hustle for a retreat close to the river with mountain views that invite you to breathe.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm tracking-widest text-gray-400">
+            <div>NEAR BHUNTER AIRPORT</div>
+            <div>LOCAL FARM-TO-TABLE</div>
+            <div>4.8 ★ (199+ REVIEWS)</div>
+        </div>
+    </section>
+
+    <section id="rooms" class="py-20 bg-zinc-900 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="border border-gold p-2">
+                <img src="image_06db49.jpg" alt="Holt Loft Interior" class="w-full grayscale hover:grayscale-0 transition duration-500">
+            </div>
+            <div>
+                <h2 class="text-4xl mb-4">The Holt-Loft</h2>
+                <p class="text-gray-400 mb-6">Experience the warmth of wooden cottages and stone architecture. Perfect for 2 adults looking for solitude and mountain aesthetics.</p>
+                <ul class="text-sm space-y-2 mb-8 text-gray-300">
+                    <li>✓ Breakfast Included</li>
+                    <li>✓ Riverside Access</li>
+                    <li>✓ Panoramic Mountain Windows</li>
+                </ul>
+                <div class="text-3xl mb-6">₹3,483 <span class="text-sm text-gray-500">+ taxes</span></div>
+                <div id="booking" class="bg-black border border-gold p-6">
+                    <h3 class="text-gold text-lg mb-4 uppercase">Select Dates</h3>
+                    <div class="flex flex-col space-y-4">
+                        <input type="date" class="bg-zinc-800 border-none p-3 text-white focus:ring-1 ring-gold">
+                        <button class="gold-bg text-black font-bold py-3 uppercase tracking-widest hover:scale-105 transition">Check Availability</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl uppercase tracking-widest">The Environment</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06dba5.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
+            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06dbdb.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
+            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06df26.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
+            <div class="h-64 bg-zinc-800 overflow-hidden"><img src="image_06e24e.jpg" class="object-cover h-full w-full opacity-80 hover:opacity-100 transition"></div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 border-t border-white/10 bg-black text-center">
+        <img src="logo anandgram village.avif" alt="Logo" class="w-24 mx-auto mb-8">
+        <p class="gold-text uppercase tracking-widest mb-4">Stay Close To Nature</p>
+        <p class="text-gray-500 text-sm mb-8">V4V2+XW7, Pah Valley, Bhullang, Himachal Pradesh 175126</p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.makemytrip.com/" class="text-xs border border-gray-700 px-4 py-2 hover:border-gold">MakeMyTrip</a>
+            <a href="https://www.goibibo.com/" class="text-xs border border-gray-700 px-4 py-2 hover:border-gold">Goibibo</a>
+        </div>
+    </footer>
+
+</body>
+</html>
